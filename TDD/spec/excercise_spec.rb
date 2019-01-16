@@ -39,9 +39,24 @@ end
 
 describe "#my_transpose" do 
   it "returns an empty array if given an empty array" do
-    expect([].my_transpose).to be_empty
+    expect(my_transpose([])).to be_empty
   end
-  # it "returns a transposed array" do 
-    
-  # end
+
+  it "returns a transposed array" do 
+    t = [[0, 1, 2],[3, 4, 5],[6, 7, 8]]
+    g = [[0, 3, 6],[1, 4, 7],[2, 5, 8]]
+    expect(my_transpose(t)).to eq(g)
+  end
+end 
+
+describe "stock_picker" do 
+  it "outputs the most profitable day to buy and sell" do
+    str = "You should buy on day 1 and sell on day 4"
+    expect(stock_picker([5,10,15,20])).to eq(str)
+  end 
+
+  it "does not sell before you buy" do 
+    expect(stock_picker([20,15,10,5])).to eq("Do not buy")
+  end 
+
 end 
