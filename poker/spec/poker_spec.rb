@@ -1,1 +1,3 @@
-require ""
+require "rspec"
+require "poker"
+
